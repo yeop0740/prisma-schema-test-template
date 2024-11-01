@@ -21,6 +21,7 @@ model User {
   isDeleted             Boolean      @default(false)
 
   soldier           Soldier[]
+  userSoldier       UserSolder[]
 }
 
 model Soldier {
@@ -28,6 +29,18 @@ model Soldier {
   name                       String
   isDeleted                  Boolean   @default(false)
 
-  userId Int
-  user   User @relation(fields: [userId], references: [id])
+  userId      Int
+  user        User @relation(fields: [userId], references: [id])
+  userSoldier UserSolder[]
+}
+
+model UserSolder {
+  id Int @id @default(autoincrement())
+
+  userId    Int 
+  user      User @relation(fields: [userId], references: [id])
+  soldierId Int
+  soldier   Soldier @relation(fields: [soldierId], references: [id])
+  // unique 제약조건을 걸지 않아도 되는지 확인해볼 필요는 있을 듯
+  @@unique([userId, soldierId])
 }
