@@ -71,12 +71,8 @@
           "isRequired": true,
           "kind": "object",
           "relationName": "SoldierToUser",
-          "relationFromFields": [
-            "userId"
-          ],
-          "relationToFields": [
-            "id"
-          ],
+          "relationFromFields": ["userId"],
+          "relationToFields": ["id"],
           "isList": false,
           "isId": false,
           "isGenerated": false,
@@ -87,16 +83,7 @@
       "uniqueConstraints": [
         {
           "name": "Soldier_pkey",
-          "fields": [
-            "id"
-          ],
-          "nullNotDistinct": false
-        },
-        {
-          "name": "Soldier_userId_key",
-          "fields": [
-            "userId"
-          ],
+          "fields": ["id"],
           "nullNotDistinct": false
         }
       ]
@@ -198,16 +185,12 @@
       "uniqueConstraints": [
         {
           "name": "User_pkey",
-          "fields": [
-            "id"
-          ],
+          "fields": ["id"],
           "nullNotDistinct": false
         },
         {
           "name": "User_email_key",
-          "fields": [
-            "email"
-          ],
+          "fields": ["email"],
           "nullNotDistinct": false
         }
       ]
@@ -333,9 +316,7 @@
       "uniqueConstraints": [
         {
           "name": "_prisma_migrations_pkey",
-          "fields": [
-            "id"
-          ],
+          "fields": ["id"],
           "nullNotDistinct": false
         }
       ]

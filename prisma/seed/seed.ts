@@ -12,12 +12,20 @@ const main = async () => {
   // Truncate all tables in the database
   await seed.$resetDatabase();
 
-  // Seed the database with 100 user and 100 soldier
+  // Seed the database with 100 user
+  // 1 to 12 soldier per user
   await seed.user((x) =>
     x(100, {
-      soldier: (y) => y(1),
+      soldier: (y) => y({ min: 1, max: 12 }),
     })
   );
+
+  // Seed the database with 100 user and 100 soldier
+  // await seed.user((x) =>
+  //   x(100, {
+  //     soldier: (y) => y(1),
+  //   })
+  // );
 
   // Type completion not working? You might want to reload your TypeScript Server to pick up the changes
 

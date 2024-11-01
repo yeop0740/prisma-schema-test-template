@@ -20,7 +20,7 @@ model User {
   updatedAt             DateTime     @updatedAt
   isDeleted             Boolean      @default(false)
 
-  soldier           Soldier?
+  soldier           Soldier[]
 }
 
 model Soldier {
@@ -28,6 +28,6 @@ model Soldier {
   name                       String
   isDeleted                  Boolean   @default(false)
 
-  userId Int  @unique
+  userId Int
   user   User @relation(fields: [userId], references: [id])
 }
